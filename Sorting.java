@@ -2,10 +2,11 @@ import java.util.Arrays;
 
 public class Sorting {
     public static void main(String[] args) {
-        int[] arr = { 4, 5, 1, 2, 3 };
+        int[] arr = { 3, -2, 1, -5 };
 
         // selectionSort(arr);
-        bubblesSort(arr);
+        // bubblesSort(arr);
+        insertionSort(arr);
         System.out.println(Arrays.toString(arr));
 
     }
@@ -30,6 +31,7 @@ public class Sorting {
     }
 
     static public void bubblesSort(int[] arr) {
+
         boolean swapped;
         for (int i = 0; i < arr.length; i++) {
             swapped = false;
@@ -42,6 +44,20 @@ public class Sorting {
             if (!swapped) {
                 break;
             }
+        }
+    }
+
+    static public void insertionSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    swap(arr, j, j - 1);
+                } else {
+                    break;
+                }
+
+            }
+
         }
     }
 }
